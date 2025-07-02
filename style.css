@@ -25,10 +25,26 @@
 body{
     font-family: 'Inter';
     background-color: var(--VeryDarkBlue1);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+.background-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 300px;
+    background-color: var(--VeryDarkBlue2);
+    z-index: 0;
+}
+
+.main {
+    position: relative;
+    z-index: 1;
 }
 
 .container_top{
@@ -42,7 +58,6 @@ h1{
 
 header{
     display: flex;
-    margin-top: 175px;
     margin-bottom: 45px;
 }
 
@@ -244,13 +259,11 @@ button{
 
 .fb_views h4, .insta_likes h4, .insta_views h4, .twitter_retweets h4, .twitter_likes h4{
     color: var(--LimeGreen);
-    margin-top: 16px;
     font-size: 11px;
 }
 
 .fb_likes h4, .ytb_likes h4, .ytb_views h4{
     color: var(--BrightRed);
-    margin-top: 16px;
     font-size: 11px;
 }
 
@@ -260,65 +273,90 @@ button{
 
 .bot_2{
     display: flex;
-    margin-top: 25px;
+    margin-top: 30px;
+    align-items: center;
 }
 
-.icon_up_2{
+.icon_up_2,
+.icon_down_2 {
     width: 8px;
     height: 4px;
-    margin-top: 11px;
 }
 
-.icon_down_2{
-    width: 8px;
-    height: 4px;
-    margin-top: 21px;
+.fb_views .top_2, .fb_views .bot_2, .fb_likes .top_2, .fb_likes .bot_2, .insta_likes .top_2, .insta_likes .bot_2, .insta_views .top_2, .insta_views .bot_2, .twitter_retweets .top_2, .twitter_retweets .bot_2, .twitter_likes .top_2, .twitter_likes .bot_2, .ytb_likes .top_2, .ytb_likes .bot_2, .ytb_views .top_2, .ytb_views .bot_2{
+    justify-content: space-between;
 }
 
-.fb_views .icon_up_2{
-    margin: 21px 3px 0 130px;
+.fleche {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.fb_likes .icon_down_2{
-    margin: 21px 3px 0 129px;
-}
+@media screen and (max-width: 1200px) {
 
-.insta_likes .icon_up_2{
-    margin: 21px 3px 0 65px;
-}
+    .main{
+        margin: 100px 0 50px 0;
+    }
 
-.insta_views .icon_up_2{
-    margin: 21px 3px 0 92.5px;
-}
+    .container_top{
+        flex-direction: column;
+        align-items: center;
+    }
 
-.twitter_retweets .icon_up_2{
-    margin: 21px 3px 0 108px;
-}
+    .fb_follow, .twitter_follow, .insta_follow, .ytb_follow{
+        width: 100%;
+    }
 
-.twitter_likes .icon_up_2{
-    margin: 21px 3px 0 93px;
-}
+    .fb_follow .top, .twitter_follow .top,.insta_follow .top_insta, .ytb_follow .top{
+        margin-right: 75px;
+    }
 
-.ytb_likes .icon_down_2{
-    margin: 21px 3px 0 109px;
-}
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
 
-.ytb_views .icon_down_2{
-    margin: 21px 3px 0 88px;
-}
+    header h2{
+        margin-bottom: 10px;
+        border-bottom: 1px solid var(--DesaturatedBlue);
+        padding-bottom: 20px;
+    }
+    
+    .dark{
+        margin-left: 0;
+        margin-top: 10px;
+    }
 
-.icon_fb_2, .icon_ytb_3{
-    margin-left: 95px;
-}
+    .dark h3{
+        margin-right: 190px;
+    }
 
-.icon_fb_3, .icon_insta_2, .icon_twitter_3, .icon_ytb_2{
-    margin-left: 140px;
-}
+    .center h2{
+        margin-top: 40px;
+    }
+    
+    .container_bot{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container_bot_line_1, .container_bot_line_2{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .top, .top_insta, .bot_green, .bot_red{
+        justify-content: center;
+    }
 
-.icon_insta_3{
-    margin-left: 82px;
-}
+    .fb_views, .fb_likes, .insta_likes, .insta_views, .twitter_retweets, .twitter_likes, .ytb_likes, .ytb_views{
+        width: 100%;
+        height: 125px;
+    }
 
-.icon_twitter_2{
-    margin-left: 113px;
+    .fb_views .top_2, .fb_views .bot_2, .fb_likes .top_2, .fb_likes .bot_2, .insta_likes .top_2, .insta_likes .bot_2, .insta_views .top_2, .insta_views .bot_2, .twitter_retweets .top_2, .twitter_retweets .bot_2, .twitter_likes .top_2, .twitter_likes .bot_2, .ytb_likes .top_2, .ytb_likes .bot_2, .ytb_views .top_2, .ytb_views .bot_2{
+        justify-content: space-between;
+    }
+    
 }
